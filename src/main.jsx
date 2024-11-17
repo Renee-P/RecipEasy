@@ -1,22 +1,23 @@
- import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import Signup from './components/Signup.jsx'
-import Login from './components/Login.jsx'
-import Main from './components/Main.jsx'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import Signup from "./components/Signup.jsx";
+import Login from "./components/Login.jsx";
+import Home from "./components/Home.jsx";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min.js";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
     <Router>
       <Switch>
-        <Route exact path='/' component={App} />
-        <Route path='/login' component={Login} />
-        <Route path='/signup' component={Signup} />
-        <Route path='/home' component={Main} />
+        <Route exact path="/" component={App} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/home" component={Home} />
       </Switch>
     </Router>
-  </StrictMode>,
-)
-
+  </BrowserRouter>
+);

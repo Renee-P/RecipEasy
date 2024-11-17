@@ -1,0 +1,27 @@
+/* Default - 3 columns */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+/* Adjust to 2 columns for medium screens */
+@media (max-width: 800px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Adjust to 1 column for small screens */
+@media (max-width: 600px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.section{
+  background-color: lightgray;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 15px;
+}
