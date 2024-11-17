@@ -25,12 +25,12 @@ function App() {
           </ul>
         </nav>
         <div class="header-buttons">
-          <a href="#" class="btn">
+          <Link to="/login" class="btn">
             Log in
-          </a>
-          <a href="#" class="btn1">
+          </Link>
+          <Link to="/signup" class="btn1">
             Sign up
-          </a>
+          </Link>
         </div>
       </header>
 
@@ -39,9 +39,9 @@ function App() {
           <h1 class="he1">What do you have in your</h1>
           <h1 class="he2">fridge?</h1>
           <div class="hero-button">
-            <a href="#" class="btn">
+            <Link to="/home" class="btn">
               Start Cooking
-            </a>
+            </Link>
           </div>
         </div>
         <img src="Rer.jpg" alt="Salad" class="hero-image"></img>
