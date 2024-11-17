@@ -15,58 +15,78 @@ function App() {
 
   return (
     <div>
-      <div class="whitesht1"></div>
+      <div className="whitesht1"></div>
 
       <header>
         <nav>
-          <ul class="nav-list">
+          <ul className="nav-list">
             <a href="#home" />
-            <img src="logo-name.jpg" alt="ReciEasy Logo" class="logopo"></img>
+            <img
+              src="/logo-name.svg"
+              alt="ReciEasy Logo"
+              className="logopo"
+            ></img>
           </ul>
         </nav>
-        <div class="header-buttons">
-          <Link to="/login" class="btn">
+        <div className="header-buttons">
+          <Link to="/login" className="btn">
             Log in
           </Link>
-          <Link to="/signup" class="btn1">
+          <Link to="/signup" className="btn1">
             Sign up
           </Link>
         </div>
       </header>
 
       <section id="hero">
-        <div class="hero-content">
-          <h1 class="he1">What do you have in your</h1>
-          <h1 class="he2">fridge?</h1>
-          <div class="hero-button">
-            <Link to="/home" class="btn">
+        <div className="hero-content">
+          <h1 className="he1">What do you have in your</h1>
+          <h1 className="he2">fridge?</h1>
+          <div className="hero-button">
+            <Link to="/home" className="btn">
               Start Cooking
             </Link>
           </div>
         </div>
-        <img src="Rer.jpg" alt="Salad" class="hero-image"></img>
-        <div class="landing-cards">
-          <div class="landing-card1">
-            <h3 class="he3">Personalized Recipe</h3>
-            <img src="cok.jpg" alt="Person Cooking" class="landing-img"></img>
+        <img src="/Rer.svg" alt="Salad" className="hero-image"></img>
+        <div className="landing-cards">
+          <div className="landing-card1">
+            <h3 className="he3">Personalized Recipe</h3>
+            <img
+              src="/cok.webp"
+              alt="Person Cooking"
+              className="landing-img"
+            ></img>
           </div>
-          <div class="landing-card2">
-            <h3 class="h3">Dietary Flexibility</h3>
-            <img src="cok2.jpg" alt="Person Cooking" class="landing-img"></img>
+          <div className="landing-card2">
+            <h3 className="h3">Dietary Flexibility</h3>
+            <img
+              src="/cok2.webp"
+              alt="Person Cooking"
+              className="landing-img"
+            ></img>
           </div>
-          <div class="landing-card3">
-            <h3 class="he3">Quick and Easy</h3>
-            <img src="cok3.jpg" alt="Person Cooking" class="landing-img"></img>
+          <div className="landing-card3">
+            <h3 className="he3">Quick and Easy</h3>
+            <img
+              src="/cok3.webp"
+              alt="Person Cooking"
+              className="landing-img"
+            ></img>
           </div>
         </div>
       </section>
 
-      <div class="whitesht"></div>
+      <div className="whitesht"></div>
 
       <section id="featured-recipes">
-        <div class="featured-content">
-          <img src="piz.jpeg" alt="Featured Recipe" class="featured-img"></img>
-          <div class="featured-text">
+        <div className="featured-content">
+          <img
+            src="/piz.jpg"
+            alt="Featured Recipe"
+            className="featured-img"
+          ></img>
+          <div className="featured-text">
             <h2>Classic Italian Pizza</h2>
             <p>
               TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -80,11 +100,11 @@ function App() {
           </div>
         </div>
 
-        <div class="line"></div>
+        <div className="line"></div>
 
-        <div class="featured-content1">
-          <img src="ram.jpeg" alt="Featured Recipe" class="featured-img" />
-          <div class="featured-text">
+        <div className="featured-content1">
+          <img src="/ram.jpg" alt="Featured Recipe" className="featured-img" />
+          <div className="featured-text">
             <h2>Classic Italian Pizza</h2>
             <p>
               TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -100,12 +120,12 @@ function App() {
       </section>
 
       <footer>
-        <div class="footer-links">
+        <div className="footer-links">
           <a href="#privacy-policy">Privacy Policy</a> |
           <a href="#terms-of-service">Terms of Service</a> |
           <a href="#contact">Contact Us</a>
         </div>
-        <div class="social-media">
+        <div className="social-media">
           <a href="https://facebook.com" target="_blank">
             Facebook
           </a>{" "}
