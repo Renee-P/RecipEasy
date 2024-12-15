@@ -72,7 +72,14 @@ function RecipeDetail({ recipe, onClose }) {
         {/* Ingredients Section */}
         <h3 style={{ color: "#4CAF50", marginBottom: "10px" }}>Ingredients</h3>
         <ul style={{ marginBottom: "20px", color: "#555" }}>
-          {recipe.ingredients && recipe.ingredients.length > 0 ? (
+          {typeof recipe.ingredients === "string" ? (
+            recipe.ingredients
+              .split(",")
+              .map((ingredient, index) => (
+                <li key={index}>{ingredient.trim()}</li>
+              ))
+          ) : Array.isArray(recipe.ingredients) &&
+            recipe.ingredients.length > 0 ? (
             recipe.ingredients.map((ingredient, index) => (
               <li key={index}>{ingredient}</li>
             ))

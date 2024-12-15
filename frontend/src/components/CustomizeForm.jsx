@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./CustomizeForm.css";
 
-function CustomizeForm() {
+function CustomizeForm({ onResults }) {
   const [customRestrictions, setCustomRestrictions] = useState("");
   const [selectedRestrictions, setSelectedRestrictions] = useState([]);
   const [selectedIngredients, setSelectedIngredients] = useState([]);
@@ -16,8 +16,8 @@ function CustomizeForm() {
   const [isIngredientsOpen, setIsIngredientsOpen] = useState(false);
   const [isRecipeTypeOpen, setIsRecipeTypeOpen] = useState(false);
 
-  //state to show results after clicking find recipes button
-  const [showResults, setShowResults] = useState(false);
+  //state to store the recipes returned by the API.
+  const [resultsData, setResultsData] = useState([]);
 
   const dietaryOptions = [
     "Vegan",
@@ -112,19 +112,38 @@ function CustomizeForm() {
     );
   };
 
-  const handleSearch = () => {
-    // Collect all selected options
+  const handleSearch = async () => {
+    console.log(onResults); // Debugging step
+
     const selectedData = {
       dietaryRestrictions: selectedRestrictions.concat(customRestrictionsList),
       ingredients: selectedIngredients.concat(customIngredientsList),
-      recipeType: recipeType,
+      recipeType: recipeType === "All" ? "" : recipeType,
     };
 
-    // Log selected data (or make an API call here)
-    console.log("Applying filters with data:", selectedData);
+    console.log("Selected Data:", selectedData); // Test console log for selectedData
 
-    // Set showResults to true to display the results
-    setShowResults(true);
+    try {
+      const response = await fetch("http://localhost:5000/recipes/filter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(selectedData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch recipes.");
+      }
+
+      const data = await response.json();
+      console.log("API Response Data:", data); // Test console log for API response
+      onResults(data); // Pass the API response to results.jsx
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+      onResults({ error: "Unable to fetch recipes. Please try again later." });
+      console.log(onResults); // Check if onResults is defined
+    }
   };
 
   const handleClear = () => {
