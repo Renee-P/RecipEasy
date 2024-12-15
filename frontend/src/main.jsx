@@ -6,7 +6,7 @@ import Signup from "./components/Signup.jsx";
 import Login from "./components/Login.jsx";
 import Home from "./components/Home.jsx";
 import Saves from "./components/Saves.jsx";
-import Admin from "./components/Saves.jsx";
+import Admin from "./components/Admin.jsx";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min.js";
