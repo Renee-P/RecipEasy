@@ -100,6 +100,7 @@ function Results() {
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
             gap: "20px",
+            paddingBottom: "30px",
           }}
         >
           {sampleRecipes
@@ -108,9 +109,11 @@ function Results() {
                 (b.hasAllIngredients ? 1 : -1) - (a.hasAllIngredients ? 1 : -1)
             )
             .map((recipe) => (
-              <div key={recipe.id} onClick={() => openRecipeDetail(recipe)}>
-                <RecipeCard recipe={recipe} />
-              </div>
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                onOpenDetail={openRecipeDetail}
+              />
             ))}
         </div>
       )}

@@ -268,12 +268,17 @@ function CustomizeForm() {
               <div className="custom-list">
                 {customRestrictionsList.map((restriction, index) => (
                   <div key={index} className="custom-item">
-                    <span>{restriction}</span>
-                    <button
-                      onClick={() => handleDeleteCustomRestriction(restriction)}
-                    >
-                      x
-                    </button>
+                    <span className="cust-item-css">
+                      {restriction}
+                      <button
+                        className="del-custom"
+                        onClick={() =>
+                          handleDeleteCustomRestriction(restriction)
+                        }
+                      >
+                        x
+                      </button>
+                    </span>
                   </div>
                 ))}
               </div>
@@ -386,12 +391,15 @@ function CustomizeForm() {
               <div className="custom-list">
                 {customIngredientsList.map((ingredient, index) => (
                   <div key={index} className="custom-item">
-                    <span>{ingredient}</span>
-                    <button
-                      onClick={() => handleDeleteCustomIngredient(ingredient)}
-                    >
-                      x
-                    </button>
+                    <span className="cust-item-css">
+                      {ingredient}
+                      <button
+                        className="del-custom"
+                        onClick={() => handleDeleteCustomIngredient(ingredient)}
+                      >
+                        x
+                      </button>
+                    </span>
                   </div>
                 ))}
               </div>

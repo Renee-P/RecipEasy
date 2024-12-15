@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ recipe, onOpenDetail }) {
   // State to track if the recipe is saved
   const [isSaved, setIsSaved] = useState(false);
 
@@ -17,7 +17,9 @@ function RecipeCard({ recipe }) {
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         padding: "20px",
         position: "relative",
+        cursor: "pointer", // Ensures the card is clickable
       }}
+      onClick={() => onOpenDetail(recipe)} // Open detail view when clicked
     >
       {/* Recipe Image */}
       <img
@@ -53,7 +55,10 @@ function RecipeCard({ recipe }) {
 
       {/* Toggleable Heart Icon */}
       <svg
-        onClick={toggleSave}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevents triggering both onClick events
+          toggleSave();
+        }}
         style={{
           position: "absolute",
           top: "10px",
@@ -65,6 +70,7 @@ function RecipeCard({ recipe }) {
           width: "30px",
           height: "30px",
           transition: "fill 0.3s",
+          zIndex: 10, // Ensures the heart icon is above other elements
         }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

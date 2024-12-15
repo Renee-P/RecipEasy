@@ -64,13 +64,22 @@ function Home() {
               right: "25px",
               backgroundColor: "#E6EADD",
               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.2)",
-              padding: "10px",
+              padding: "8px",
               borderRadius: "8px",
               width: "200px",
               zIndex: 9999,
             }}
           >
-            <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul
+              style={{
+                listStyle: "none",
+                padding: 0,
+                margin: 0,
+                paddingLeft: "8px",
+                fontWeight: "450",
+                fontSize: "1.2rem",
+              }}
+            >
               <li style={{ margin: "10px 0" }}>
                 <a
                   href="/my-saves"
@@ -82,7 +91,7 @@ function Home() {
               <li style={{ margin: "10px 0" }}>
                 <a
                   href="/login"
-                  style={{ textDecoration: "none", color: "#789F52" }}
+                  style={{ textDecoration: "none", color: "#F8741F" }}
                 >
                   Log Out
                 </a>
