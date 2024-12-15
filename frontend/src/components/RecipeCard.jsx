@@ -23,8 +23,8 @@ function RecipeCard({ recipe, onOpenDetail }) {
     >
       {/* Recipe Image */}
       <img
-        src={recipe.image}
-        alt={recipe.title}
+        src={recipe.image || "/placeholder-image.png"} // Default image if none provided
+        alt={recipe.name}
         style={{
           width: "100%",
           height: "200px",
@@ -35,18 +35,11 @@ function RecipeCard({ recipe, onOpenDetail }) {
 
       {/* Recipe Information */}
       <div style={{ marginTop: "15px" }}>
-        <h3 style={{ marginBottom: "10px", color: "#333" }}>{recipe.title}</h3>
+        <h3 style={{ marginBottom: "10px", color: "#333" }}>{recipe.name}</h3>
         <p style={{ marginBottom: "5px", color: "#555" }}>
-          Source: {recipe.source}
+          Type: {recipe.recipe_type || "N/A"}
         </p>
-        <p style={{ marginBottom: "10px", color: "#555" }}>
-          Rating: ⭐ {recipe.rating}
-        </p>
-        <p
-          style={{
-            color: recipe.hasAllIngredients ? "#4CAF50" : "#F44336",
-          }}
-        >
+        <p style={{ color: recipe.hasAllIngredients ? "#4CAF50" : "#F44336" }}>
           {recipe.hasAllIngredients
             ? "You have all ingredients!"
             : "Missing some ingredients"}

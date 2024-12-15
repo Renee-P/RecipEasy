@@ -31,6 +31,7 @@ function CustomizeForm() {
   const ingredientsOptions = [
     "Chicken",
     "Beef",
+    "Shrimp",
     "Carrot",
     "Tomato",
     "Lettuce",
@@ -47,11 +48,12 @@ function CustomizeForm() {
   const recipeTypes = [
     "All",
     "Breakfast",
-    "Lunch",
-    "Dinner",
+    "Main",
     "Snack",
     "Dessert",
     "Appetizer",
+    "Soup",
+    "Side",
   ];
 
   const handleCheckboxChange = (option, type) => {

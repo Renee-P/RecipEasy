@@ -49,8 +49,8 @@ function RecipeDetail({ recipe, onClose }) {
 
         {/* Recipe Image */}
         <img
-          src={recipe.image}
-          alt={recipe.title}
+          src={recipe.image || "/placeholder-image.png"} // Default image if none provided
+          alt={recipe.name}
           style={{
             width: "100%",
             height: "300px",
@@ -61,12 +61,12 @@ function RecipeDetail({ recipe, onClose }) {
         />
 
         {/* Recipe Title */}
-        <h2 style={{ color: "#333", marginBottom: "15px" }}>{recipe.title}</h2>
-        <p style={{ color: "#777", marginBottom: "10px" }}>
-          Source: {recipe.source}
+        <h2 style={{ color: "#333", marginBottom: "15px" }}>{recipe.name}</h2>
+        <p style={{ color: "#555", marginBottom: "5px" }}>
+          Type: {recipe.recipe_type || "N/A"}
         </p>
-        <p style={{ color: "#777", marginBottom: "20px" }}>
-          Rating: ⭐ {recipe.rating}
+        <p style={{ color: "#555", marginBottom: "5px" }}>
+          Dietary Details: {recipe.dietary_restrictions || "None"}
         </p>
 
         {/* Ingredients Section */}

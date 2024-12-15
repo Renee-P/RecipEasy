@@ -6,10 +6,10 @@ import RecipeDetail from "./RecipeDetail";
 const sampleRecipes = [
   {
     id: 1,
-    image: "/cok3.webp",
-    title: "Spaghetti Carbonara",
+    image:
+      "https://i.pinimg.com/736x/e8/56/e5/e856e58e65335b060e8988defc198c26.jpg",
+    name: "Spaghetti Carbonara",
     source: "AllRecipes",
-    rating: 4.5,
     hasAllIngredients: true,
     ingredients: ["Spaghetti", "Eggs", "Bacon", "Parmesan", "Pepper"],
     instructions: "Cook spaghetti. Fry bacon. Mix with eggs and cheese.",
@@ -17,25 +17,19 @@ const sampleRecipes = [
   {
     id: 2,
     image: "/piz.jpg",
-    title: "Vegetarian Pizza",
-    source: "FoodNetwork",
-    rating: 4.0,
+    name: "Vegetarian Pizza",
     hasAllIngredients: false,
   },
   {
     id: 3,
     image: "/cok.webp",
-    title: "Chicken Alfredo",
-    source: "Epicurious",
-    rating: 4.8,
+    name: "Chicken Alfredo",
     hasAllIngredients: true,
   },
   {
     id: 4,
     image: "./cok2.webp",
-    title: "Tacos",
-    source: "BBC Good Food",
-    rating: 3.9,
+    name: "Tacos",
     hasAllIngredients: false,
   },
 ];
