@@ -8,48 +8,47 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-} 
+}
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80%;
   height: 80%;
   background-color: #eee;
   border-radius: 20px;
   overflow: hidden;
-  padding-right: 20px;
 }
 
 .image {
-  width: 50%;
+  width: 50%; /* Left side image */
   height: 100%;
-  background-image: url('/food.jpeg');
-  margin-right: 20px;
+  background-image: url('food.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
 .login {
-  width: 50%;
+  width: 50%; /* Right side form */
   height: 100%;
-  background-color: #eee;
-  border-radius: 20px;
-  padding: 20px;
+  background-color: #fff;
+  padding: 40px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .login h1 {
-  color: #789F52;
-  font-size: 2em;
+  color: #FA8A41;
+  font-size: 2.5em;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .login form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
-  height: 100%;
   width: 100%;
 }
 
@@ -57,13 +56,12 @@
   color: #818181;
   font-size: 1.2em;
   margin-bottom: 10px;
-  text-align: left;
   width: 100%;
 }
 
 .login input {
   width: 100%;
-  height: 30px;
+  height: 40px;
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ddd;
@@ -78,6 +76,8 @@
   border-radius: 500px;
   margin-bottom: 50px;
   height: 50px;
+  font-size: 1.2em;
+  transition: background-color 0.3s;
 }
 
 .login input[type="submit"]:hover {
@@ -92,11 +92,10 @@
 
 .login .remember-label input[type="checkbox"] {
   margin-right: 10px;
+  margin-left: 5px;
   width: 15px;
   height: 15px;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 100px;
+  margin-top: 17px;
 }
 
 .login .remember-label span {
@@ -108,7 +107,7 @@
   font-size: 1.2em;
   color: #78b352;
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .login .signup-link {
@@ -117,121 +116,10 @@
   text-decoration: none;
   margin-top: 20px;
   text-align: center;
-  width: 100%;
-  padding-bottom: 50px;
 }
 
 .login .signup-link a {
   color: #FA8A41;
   text-decoration: none;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  height: 80%;
-  background-color: #eee;
-  border-radius: 20px;
-  overflow: hidden;
-  padding-right: 20px;
-}
-
-.imagesu {
-  width: 50%;
-  height: 100%;
-  background-image: url('/fd.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 20px;
-}
-
-
-.signup {
-  width: 50%;
-  height: 100%;
-  background-color: #eee;
-  border-radius: 20px;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.signup h1 {
-  color: #FA8A41;
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.signup form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100%;
-  width: 100%;
-}
-
-.signup label {
-  color: #818181;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  text-align: left;
-  width: 100%;
-}
-
-.signup input {
-  width: 100%;
-  height: 30px;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em;
-}
-
-.signup input[type="submit"] {
-  background-color: #78b352;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 500px;
-  margin-bottom: 50px;
-  height: 50px;
-}
-
-.signup input[type="submit"]:hover {
-  background-color: #628C38;
-}
-
-.signup .remember-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.signup .remember-label input[type="checkbox"] {
-  margin-right: 10px;
-  width: 15px;
-  height: 15px;
-  margin-top: 20px;
-}
-
-.signup .remember-label span {
-  font-size: 1.2em;
-  color: #78b352;
-}
-
-.signup .signup-link {
-  font-size: 1.2em;
-  color: #78b352;
-  text-decoration: none;
-  margin-top: 20px;
-  text-align: center;
-  width: 100%;
-}
-
-.signup .signup-link a {
-  color: #FA8A41;
-  text-decoration: none;
+  font-weight: bold;
 }

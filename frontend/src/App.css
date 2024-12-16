@@ -107,30 +107,38 @@ header nav ul li a {
   position: relative;
   text-align: center;
   padding: 3em 1em;
+  min-height: 400px;
+  height: auto;
   background-color: #f2f2f2;
   overflow: hidden;
   /* background-image: url("Rer.svg"); */
+  z-index: 1;
+  padding-top: 10vh;
+}
+
+#hero .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Rer.svg");
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: 40%;
+  opacity: 0.3;
+  z-index: -1; 
 }
 
-#hero::before {
+#hero::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/rer.jpg') no-repeat center center;
-  background-size: cover;
-  opacity: 0.2;
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: -1;
-  background-repeat: no-repeat;
-  background-image: url("Rer.svg");
-  background-position: center bottom;
-  background-repeat: no-repeat;
-  background-size: 40%;
 }
 
 #hero h1,
@@ -152,9 +160,13 @@ header nav ul li a {
   color: #FFF;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  margin-top: 1%;
+  margin-bottom: 10%;
+  height: calc(fit-content - 2em);
+  width: calc(fit-content + 2em);
 }
 
 .hero-button .btn:hover {
@@ -229,6 +241,15 @@ header nav ul li a {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.landing-card-link {
+  display: block; /* Ensures the entire card is clickable */
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Ensures text retains the intended color */
+}
+
+.landing-card-link:hover {
+  text-decoration: none; /* Ensures underline doesn't appear on hover */
+}
 
 
 .landing-card1:hover, 
@@ -303,6 +324,8 @@ header nav ul li a {
 .featured-text {
   flex: 1;
   max-width: 600px;
+  font-size: 1.5em;
+  padding: 5%;
 }
 
 .featured-text h2 {
