@@ -78,47 +78,6 @@ function App() {
       </section>
 
       <div className="whitesht"></div>
-
-      <section id="featured-recipes">
-        <div className="featured-content">
-          <img
-            src="/piz.jpg"
-            alt="Featured Recipe"
-            className="featured-img"
-          ></img>
-          <div className="featured-text">
-            <h2>Classic Italian Pizza</h2>
-            <p>
-              TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-
-        <div className="line"></div>
-
-        <div className="featured-content1">
-          <img src="/ram.jpg" alt="Featured Recipe" className="featured-img" />
-          <div className="featured-text">
-            <h2>Classic Italian Pizza</h2>
-            <p>
-              TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <footer>
         <div className="footer-links">
           <a href="#privacy-policy">Privacy Policy</a> |

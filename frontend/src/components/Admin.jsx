@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Admin.css";
 import AdminRecipes from "./AdminRecipes";
 import AdminUsers from "./AdminUsers";
+import { useHistory } from "react-router-dom";
 
 function Admin() {
   const [activeSection, setActiveSection] = useState("recipes");
@@ -9,6 +10,8 @@ function Admin() {
   const handleSectionChange = (section) => {
     setActiveSection(section);
   };
+
+  const history = useHistory();
 
   return (
     <div
@@ -70,7 +73,7 @@ function Admin() {
           >
             Recipes
           </a>
-          <a
+          {/* <a
             href="#"
             onClick={() => handleSectionChange("users")}
             style={{
@@ -83,10 +86,13 @@ function Admin() {
             }}
           >
             Users
-          </a>
+          </a> */}
           <button
             className="logout-btn"
-            onClick={() => alert("Logged out")}
+            onClick={() => {
+              alert("Logged out");
+              history.push("/admin-login");
+            }}
             style={{
               marginTop: "auto",
               padding: "10px",
