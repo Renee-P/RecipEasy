@@ -239,6 +239,15 @@ header nav ul li a {
    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.landing-card-link {
+  display: block; /* Ensures the entire card is clickable */
+  text-decoration: none; /* Removes the underline */
+  color: inherit; /* Ensures text retains the intended color */
+}
+
+.landing-card-link:hover {
+  text-decoration: none; /* Ensures underline doesn't appear on hover */
+}
 
 
 .landing-card1:hover, 

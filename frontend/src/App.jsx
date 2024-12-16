@@ -50,19 +50,25 @@ function App() {
      </div>
    </div>
    <div className="landing-cards">
-      <div className="landing-card1">
-        <h3 className="he3">Personalized Recipe</h3>
-       <img src="/cok.webp" alt="Person Cooking" className="landing-img" />
-     </div>
-     <div className="landing-card2">
-        <h3 className="h3">Dietary Flexibility</h3>
-        <img src="/cok2.webp" alt="Person Cooking" className="landing-img" />
-     </div>
-     <div className="landing-card3">
-        <h3 className="he3">Quick and Easy</h3>
-       <img src="/cok3.webp" alt="Person Cooking" className="landing-img" />
-     </div>
-   </div>
+  <Link to="/login" className="landing-card-link">
+    <div className="landing-card1">
+      <h3 className="he3">Personalized Recipe</h3>
+      <img src="/cok.webp" alt="Person Cooking" className="landing-img" />
+    </div>
+  </Link>
+  <Link to="/login" className="landing-card-link">
+    <div className="landing-card2">
+      <h3 className="h3">Dietary Flexibility</h3>
+      <img src="/cok2.webp" alt="Person Cooking" className="landing-img" />
+    </div>
+  </Link>
+  <Link to="/login" className="landing-card-link">
+    <div className="landing-card3">
+      <h3 className="he3">Quick and Easy</h3>
+      <img src="/cok3.webp" alt="Person Cooking" className="landing-img" />
+    </div>
+  </Link>
+</div>
   </section>
 
 
