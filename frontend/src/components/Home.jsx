@@ -82,14 +82,14 @@ function Home() {
                 fontSize: "1.2rem",
               }}
             >
-              <li style={{ margin: "10px 0" }}>
+              {/* <li style={{ margin: "10px 0" }}>
                 <a
                   href="/my-saves"
                   style={{ textDecoration: "none", color: "#789F52" }}
                 >
                   My Saves
                 </a>
-              </li>
+              </li> */}
               <li style={{ margin: "10px 0" }}>
                 <a
                   href="/login"
