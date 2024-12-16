@@ -4,15 +4,41 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const history = useHistory();
 
   const handleLogin = (event) => {
     event.preventDefault();
-    // Login logic here (API calls, validation, etc.)
-    console.log("Logged in:", username);
-    history.push("/home"); // Navigate to the main page after successful login
+
+    // Prepare login data
+    const loginData = {
+      email,
+      password,
+    };
+
+    // Send API request to authenticate user
+    fetch("http://localhost:5000/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(loginData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === "Login successful") {
+          // Redirect to home page
+          history.push("/home");
+        } else {
+          setErrorMessage(data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setErrorMessage("An error occurred, please try again.");
+      });
   };
 
   return (
@@ -28,8 +54,8 @@ function Login() {
               type="email"
               id="email"
               name="email"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
 
@@ -56,6 +82,8 @@ function Login() {
             </div>
 
             <input type="submit" value="Log In" />
+
+            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
 
             <p className="signup-link">
               Don't have an account? <Link to="/signup">Sign up</Link>
