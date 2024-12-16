@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function RecipeCard({ recipe }) {
+function RecipeCard({ recipe, onOpenDetail }) {
   // State to track if the recipe is saved
   const [isSaved, setIsSaved] = useState(false);
 
@@ -17,12 +17,14 @@ function RecipeCard({ recipe }) {
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         padding: "20px",
         position: "relative",
+        cursor: "pointer", // Ensures the card is clickable
       }}
+      onClick={() => onOpenDetail(recipe)} // Open detail view when clicked
     >
       {/* Recipe Image */}
       <img
-        src={recipe.image}
-        alt={recipe.title}
+        src={recipe.image || "/placeholder-image.png"} // Default image if none provided
+        alt={recipe.name}
         style={{
           width: "100%",
           height: "200px",
@@ -33,18 +35,11 @@ function RecipeCard({ recipe }) {
 
       {/* Recipe Information */}
       <div style={{ marginTop: "15px" }}>
-        <h3 style={{ marginBottom: "10px", color: "#333" }}>{recipe.title}</h3>
+        <h3 style={{ marginBottom: "10px", color: "#333" }}>{recipe.name}</h3>
         <p style={{ marginBottom: "5px", color: "#555" }}>
-          Source: {recipe.source}
+          Type: {recipe.recipe_type || "N/A"}
         </p>
-        <p style={{ marginBottom: "10px", color: "#555" }}>
-          Rating: ⭐ {recipe.rating}
-        </p>
-        <p
-          style={{
-            color: recipe.hasAllIngredients ? "#4CAF50" : "#F44336",
-          }}
-        >
+        <p style={{ color: recipe.hasAllIngredients ? "#4CAF50" : "#F44336" }}>
           {recipe.hasAllIngredients
             ? "You have all ingredients!"
             : "Missing some ingredients"}
@@ -53,7 +48,10 @@ function RecipeCard({ recipe }) {
 
       {/* Toggleable Heart Icon */}
       <svg
-        onClick={toggleSave}
+        onClick={(e) => {
+          e.stopPropagation(); // Prevents triggering both onClick events
+          toggleSave();
+        }}
         style={{
           position: "absolute",
           top: "10px",
@@ -65,6 +63,7 @@ function RecipeCard({ recipe }) {
           width: "30px",
           height: "30px",
           transition: "fill 0.3s",
+          zIndex: 10, // Ensures the heart icon is above other elements
         }}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
