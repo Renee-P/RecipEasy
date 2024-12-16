@@ -36,6 +36,31 @@ class Recipe {
     console.log('SQL Query:', query);
     console.log('Params:', params);
   }  
+
+  static getAll(callback) {
+    const query = 'SELECT * FROM recipes';
+    dbConn.query(query, callback);
+  }
+
+  static getById(id, callback) {
+    const query = 'SELECT * FROM recipes WHERE id = ?';
+    dbConn.query(query, [id], callback);
+  }
+
+  static create(newRecipe, callback) {
+    const query = 'INSERT INTO recipes SET ?';
+    dbConn.query(query, newRecipe, callback);
+  }
+
+  static delete(id, callback) {
+    const query = 'DELETE FROM recipes WHERE id = ?';
+    dbConn.query(query, [id], callback);
+  }
+
+  static update(id, updatedRecipe, callback) {
+    const query = 'UPDATE recipes SET ? WHERE id = ?';
+    dbConn.query(query, [updatedRecipe, id], callback);
+  }
 }
 
 module.exports = Recipe;
