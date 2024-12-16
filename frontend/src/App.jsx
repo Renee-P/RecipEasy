@@ -39,43 +39,32 @@ function App() {
       </header>
 
       <section id="hero">
-        <div className="hero-content">
-          <h1 className="he1">What do you have in your</h1>
-          <h1 className="he2">fridge?</h1>
-          <div className="hero-button">
-            <Link to="/home" className="btn">
-              Start Cooking
-            </Link>
-          </div>
-        </div>
-        {/* <img src="/Rer.svg" alt="Salad" className="hero-image"></img> */}
-        <div className="landing-cards">
-          <div className="landing-card1">
-            <h3 className="he3">Personalized Recipe</h3>
-            <img
-              src="/cok.webp"
-              alt="Person Cooking"
-              className="landing-img"
-            ></img>
-          </div>
-          <div className="landing-card2">
-            <h3 className="h3">Dietary Flexibility</h3>
-            <img
-              src="/cok2.webp"
-              alt="Person Cooking"
-              className="landing-img"
-            ></img>
-          </div>
-          <div className="landing-card3">
-            <h3 className="he3">Quick and Easy</h3>
-            <img
-              src="/cok3.webp"
-              alt="Person Cooking"
-              className="landing-img"
-            ></img>
-          </div>
-        </div>
-      </section>
+    <div className="background-image"></div>
+   <div className="hero-content">
+      <h1 className="he1">What do you have in your</h1>
+     <h1 className="he2">fridge?</h1>
+     <div className="hero-button">
+        <Link to="/home" className="btn">
+          Start Cooking
+       </Link>
+     </div>
+   </div>
+   <div className="landing-cards">
+      <div className="landing-card1">
+        <h3 className="he3">Personalized Recipe</h3>
+       <img src="/cok.webp" alt="Person Cooking" className="landing-img" />
+     </div>
+     <div className="landing-card2">
+        <h3 className="h3">Dietary Flexibility</h3>
+        <img src="/cok2.webp" alt="Person Cooking" className="landing-img" />
+     </div>
+     <div className="landing-card3">
+        <h3 className="he3">Quick and Easy</h3>
+       <img src="/cok3.webp" alt="Person Cooking" className="landing-img" />
+     </div>
+   </div>
+  </section>
+
 
       <div className="whitesht"></div>
 
@@ -89,13 +78,15 @@ function App() {
           <div className="featured-text">
             <h2>Classic Italian Pizza</h2>
             <p>
-              TLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            A timeless favorite that captures the essence of Italy in every bite. 
+            This pizza features a thin, crispy crust topped with a simple yet delicious 
+            blend of tangy tomato sauce, rich mozzarella cheese, and a hint of fresh 
+            basil. Baked to perfection in a traditional wood-fired oven, 
+            the pizza boasts a slightly charred, golden crust with a savory 
+            combination of flavors. Often garnished with extra virgin olive oil, 
+            this dish celebrates the beauty of simplicity, showcasing the finest 
+            ingredients in an authentic Italian way. Perfect for any occasion, 
+            a Classic Italian Pizza is a slice of Italy in every mouthful.
             </p>
           </div>
         </div>
