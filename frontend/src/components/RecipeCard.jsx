@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
 function RecipeCard({ recipe, onOpenDetail }) {
-  // State to track if the recipe is saved
-  const [isSaved, setIsSaved] = useState(false);
-
-  // Function to toggle the save status
-  const toggleSave = () => {
-    setIsSaved(!isSaved);
-  };
-
   return (
     <div
       style={{
@@ -17,13 +9,12 @@ function RecipeCard({ recipe, onOpenDetail }) {
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         padding: "20px",
         position: "relative",
-        cursor: "pointer", // Ensures the card is clickable
+        cursor: "pointer",
       }}
-      onClick={() => onOpenDetail(recipe)} // Open detail view when clicked
+      onClick={() => onOpenDetail(recipe)}
     >
-      {/* Recipe Image */}
       <img
-        src={recipe.image || "/placeholder-image.png"} // Default image if none provided
+        src={recipe.image || "../../public/logo.svg"}
         alt={recipe.name}
         style={{
           width: "100%",
@@ -33,43 +24,12 @@ function RecipeCard({ recipe, onOpenDetail }) {
         }}
       />
 
-      {/* Recipe Information */}
       <div style={{ marginTop: "15px" }}>
         <h3 style={{ marginBottom: "10px", color: "#333" }}>{recipe.name}</h3>
         <p style={{ marginBottom: "5px", color: "#555" }}>
           Type: {recipe.recipe_type || "N/A"}
         </p>
-        <p style={{ color: recipe.hasAllIngredients ? "#4CAF50" : "#F44336" }}>
-          {recipe.hasAllIngredients
-            ? "You have all ingredients!"
-            : "Missing some ingredients"}
-        </p>
       </div>
-
-      {/* Toggleable Heart Icon */}
-      <svg
-        onClick={(e) => {
-          e.stopPropagation(); // Prevents triggering both onClick events
-          toggleSave();
-        }}
-        style={{
-          position: "absolute",
-          top: "10px",
-          right: "10px",
-          cursor: "pointer",
-          fill: isSaved ? "#E74C3C" : "none",
-          stroke: "#E74C3C",
-          strokeWidth: "2px",
-          width: "30px",
-          height: "30px",
-          transition: "fill 0.3s",
-          zIndex: 10, // Ensures the heart icon is above other elements
-        }}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 6.5 3.5 5 5.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5 18.5 5 20 6.5 20 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-      </svg>
     </div>
   );
 }

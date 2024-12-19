@@ -29,7 +29,6 @@ function RecipeDetail({ recipe, onClose }) {
           maxHeight: "90%",
         }}
       >
-        {/* Close Button */}
         <button
           onClick={onClose}
           style={{
@@ -49,7 +48,7 @@ function RecipeDetail({ recipe, onClose }) {
 
         {/* Recipe Image */}
         <img
-          src={recipe.image || "/placeholder-image.png"} // Default image if none provided
+          src={recipe.image || "../../public/logo.svg"}
           alt={recipe.name}
           style={{
             width: "100%",

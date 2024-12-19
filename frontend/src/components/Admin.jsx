@@ -4,14 +4,19 @@ import AdminRecipes from "./AdminRecipes";
 import AdminUsers from "./AdminUsers";
 import { useHistory } from "react-router-dom";
 
-function Admin() {
+function Admin({ isAuthorized, setIsAuthorized }) {
   const [activeSection, setActiveSection] = useState("recipes");
+  const history = useHistory();
+
+  // React.useEffect(() => {
+  //   if (!isAuthorized) {
+  //     history.push("/admin-login"); // Redirect if not authorized
+  //   }
+  // }, [isAuthorized, history]);
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
   };
-
-  const history = useHistory();
 
   return (
     <div
@@ -21,7 +26,6 @@ function Admin() {
         height: "100vh",
       }}
     >
-      {/* Header */}
       <header
         style={{
           padding: "12px 25px",
@@ -38,7 +42,6 @@ function Admin() {
         />
       </header>
 
-      {/* Main content area */}
       <div
         style={{
           display: "flex",
@@ -46,7 +49,6 @@ function Admin() {
           overflow: "hidden",
         }}
       >
-        {/* Sidebar */}
         <div
           className="sidebar"
           style={{
@@ -73,9 +75,9 @@ function Admin() {
           >
             Recipes
           </a>
-          {/* <a
+          <a
             href="#"
-            onClick={() => handleSectionChange("users")}
+            onClick={() => handleSectionChange("admins")}
             style={{
               textDecoration: "none",
               color: "#789F52",
@@ -85,12 +87,13 @@ function Admin() {
               fontWeight: "500",
             }}
           >
-            Users
-          </a> */}
+            Admins
+          </a>
           <button
             className="logout-btn"
             onClick={() => {
               alert("Logged out");
+              setIsAuthorized(false);
               history.push("/admin-login");
             }}
             style={{
@@ -108,7 +111,6 @@ function Admin() {
           </button>
         </div>
 
-        {/* Content */}
         <div
           className="content"
           style={{
@@ -119,7 +121,7 @@ function Admin() {
           }}
         >
           {activeSection === "recipes" && <AdminRecipes />}
-          {activeSection === "users" && <AdminUsers />}
+          {activeSection === "admins" && <AdminUsers />}
         </div>
       </div>
     </div>

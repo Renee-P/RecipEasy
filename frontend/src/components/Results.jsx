@@ -5,12 +5,10 @@ import RecipeDetail from "./RecipeDetail";
 function Results({ data }) {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
 
-  // Function to handle opening the detailed view
   const openRecipeDetail = (recipe) => {
     setSelectedRecipe(recipe);
   };
 
-  // Function to close the detailed view
   const closeRecipeDetail = () => {
     setSelectedRecipe(null);
   };
@@ -63,22 +61,16 @@ function Results({ data }) {
             paddingBottom: "30px",
           }}
         >
-          {data
-            .sort(
-              (a, b) =>
-                (b.hasAllIngredients ? 1 : -1) - (a.hasAllIngredients ? 1 : -1)
-            )
-            .map((recipe) => (
-              <RecipeCard
-                key={recipe.id}
-                recipe={recipe}
-                onOpenDetail={openRecipeDetail}
-              />
-            ))}
+          {data.map((recipe) => (
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              onOpenDetail={openRecipeDetail}
+            />
+          ))}
         </div>
       )}
 
-      {/* Render the RecipeDetail component if a recipe is selected */}
       {selectedRecipe && (
         <RecipeDetail recipe={selectedRecipe} onClose={closeRecipeDetail} />
       )}

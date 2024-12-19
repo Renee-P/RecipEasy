@@ -111,23 +111,25 @@ header nav ul li a {
   height: auto;
   background-color: #f2f2f2;
   overflow: hidden;
-  /* background-image: url("Rer.svg"); */
   z-index: 1;
   padding-top: 10vh;
+  background-image: url("Rer.svg");
 }
 
-#hero .background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("Rer.svg");
-  background-position: center bottom;
+#hero {
+  position: relative;
+  text-align: center;
+  padding: 3em 1em;
+  min-height: 400px;
+  height: auto;
+  background-color: #f2f2f2; 
+  overflow: hidden;
+  background-image: url("Rer.svg"); 
   background-repeat: no-repeat;
-  background-size: 40%;
-  opacity: 0.3;
-  z-index: -1; 
+  background-position: center bottom; 
+  background-size: 25%; 
+  z-index: 1;
+  padding-top: 10vh;
 }
 
 #hero::after {
@@ -163,8 +165,8 @@ header nav ul li a {
   font-size: 2em;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  margin-top: 1%;
-  margin-bottom: 10%;
+  margin-top: 20px;
+  margin-bottom: 25px;
   height: calc(fit-content - 2em);
   width: calc(fit-content + 2em);
 }
@@ -183,11 +185,6 @@ header nav ul li a {
   color: #F8741F;
 }
 
-.hero-image {
-  width: auto;
-  height: 500px;
-  opacity: 0.2;
-}
 
 .landing-cards {
   display: flex;

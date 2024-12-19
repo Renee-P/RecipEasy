@@ -4,8 +4,12 @@
   justify-content: center;
   height: 100vh;
   padding: 15px;
-  background: rgb(120, 159, 82);
+  background: rgba(120, 159, 82, 0.7); 
   overflow: hidden;
+  background-image: url('logo.svg');
+  background-size: contain; 
+  background-position: 40px center; 
+  background-repeat: no-repeat;
 }
 
 .wrapper {

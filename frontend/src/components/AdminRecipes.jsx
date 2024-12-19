@@ -12,7 +12,7 @@ function AdminRecipes() {
     instructions: "",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [editRecipe, setEditRecipe] = useState(null); // State for editing recipe
+  const [editRecipe, setEditRecipe] = useState(null);
 
   // Fetch recipes from the backend
   useEffect(() => {
@@ -59,7 +59,7 @@ function AdminRecipes() {
             recipe_type: "",
             instructions: "",
           });
-          setIsModalOpen(false); // Close modal on success
+          setIsModalOpen(false);
           alert("Recipe successfully added!");
         })
         .catch((error) => {
@@ -85,8 +85,7 @@ function AdminRecipes() {
           )
         );
         setEditRecipe(null);
-        setIsModalOpen(false); // Close modal after editing
-        //window.scrollTo(0, 0);
+        setIsModalOpen(false);
         alert("Recipe successfully edited!");
       })
       .catch((error) => {
@@ -289,7 +288,6 @@ function AdminRecipes() {
         </div>
       )}
 
-      {/* Recipes Table */}
       <table>
         <thead
           style={{

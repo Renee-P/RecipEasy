@@ -1,24 +1,37 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 import "./AdminLogin.css";
 
-function AdminLogin() {
+function AdminLogin({ setIsAuthorized }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const history = useHistory();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
 
-    // Simple authentication logic
-    if (email === "admin@gmail.com" && password === "password") {
-      alert("Log in successful!");
-      history.push("/admin");
-    } else {
-      alert("User not found.");
+    try {
+      const response = await axios.post("http://localhost:5000/admin/login", {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        alert("Login successful!");
+        setIsAuthorized(true);
+        history.push("/admin");
+      }
+    } catch (err) {
+      if (err.response) {
+        setError(err.response.data.message || "Login failed.");
+      } else {
+        setError("An error occurred. Please try again.");
+      }
     }
   };
-
-  const history = useHistory();
 
   return (
     <div className="wrapper1">
@@ -54,7 +67,7 @@ function AdminLogin() {
             </i>
             <input
               type="text"
-              placeholder="Email or Phone"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -91,6 +104,9 @@ function AdminLogin() {
               required
             />
           </div>
+          {error && (
+            <p style={{ color: "red", textAlign: "center" }}>{error}</p>
+          )}
           <div className="row button" style={{ marginBottom: "35px" }}>
             <input
               type="submit"
