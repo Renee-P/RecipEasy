@@ -57,10 +57,9 @@ function AdminUsers() {
     const { email, password } = editAdmin;
 
     if (email && password.trim()) {
-      // Ensuring password is not only spaces
       const updatedAdmin = {
         ...editAdmin,
-        password: editAdmin.password, // API already handles hashing
+        password: editAdmin.password,
       };
 
       fetch(`http://localhost:5000/admin/${editAdmin.id}`, {
@@ -87,40 +86,6 @@ function AdminUsers() {
       alert("Email and password cannot be empty or just spaces.");
     }
   };
-
-  // const handleEditAdmin = () => {
-  //   const { email, password } = editAdmin;
-
-  //   if (email && password) {
-  //     const updatedAdmin = {
-  //       ...editAdmin,
-  //       password: editAdmin.password, // API already handles hashing
-  //     };
-
-  //     fetch(`http://localhost:5000/admin/${editAdmin.id}`, {
-  //       method: "PUT",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify(updatedAdmin),
-  //     })
-  //       .then((response) => response.json())
-  //       .then((updatedAdmin) => {
-  //         setAdmins(
-  //           admins.map((admin) =>
-  //             admin.id === updatedAdmin.id ? updatedAdmin : admin
-  //           )
-  //         );
-  //         setEditAdmin(null);
-  //         setIsModalOpen(false);
-  //         alert("Admin successfully edited!");
-  //       })
-  //       .catch((error) => {
-  //         console.error("Error updating admin:", error);
-  //         alert("Failed to update admin. Please try again later.");
-  //       });
-  //   } else {
-  //     alert("Email and password cannot be empty.");
-  //   }
-  // };
 
   const openEditModal = (admin) => {
     setEditAdmin(admin);
@@ -150,13 +115,16 @@ function AdminUsers() {
 
   return (
     <div className="content">
-      <h1>Admins</h1>
+      <h1 style={{ display: "inline-block" }}>Admins</h1>
       <button
         className="btn btn-primary"
         style={{
+          display: "inline-block",
+          marginLeft: "10px",
           marginBottom: "10px",
           backgroundColor: "rgb(248, 116, 31)",
           border: "none",
+          fontSize: "1.3rem",
         }}
         onClick={() => setIsModalOpen(true)}
       >
@@ -168,12 +136,23 @@ function AdminUsers() {
           id="form-bg"
           style={{
             backgroundColor: "white",
+            marginTop: "10px",
+            marginBottom: "15px",
             padding: "20px",
             borderRadius: "20px",
+            paddingTop: "10px",
           }}
         >
           <form onSubmit={(e) => e.preventDefault()}>
-            <h2>{editAdmin ? "Edit Admin" : "Add Admin"}</h2>
+            <h2
+              style={{
+                color: "rgb(120, 159, 82)",
+                marginTop: "10px",
+                marginBottom: "15px",
+              }}
+            >
+              {editAdmin ? "Edit Admin" : "Add Admin"}
+            </h2>
             <input
               type="email"
               placeholder="Email"
@@ -198,7 +177,12 @@ function AdminUsers() {
                   <button
                     type="button"
                     className="btn btn-secondary btn-sm me-2"
-                    style={{ backgroundColor: "green", border: "none" }}
+                    style={{
+                      backgroundColor: "green",
+                      border: "none",
+                      fontSize: "1.1rem",
+                      marginTop: "5px",
+                    }}
                     onClick={handleEditAdmin}
                   >
                     Update
@@ -206,7 +190,12 @@ function AdminUsers() {
                   <button
                     type="button"
                     className="btn btn-secondary btn-sm"
-                    style={{ backgroundColor: "gray", border: "none" }}
+                    style={{
+                      backgroundColor: "gray",
+                      border: "none",
+                      fontSize: "1.1rem",
+                      marginTop: "5px",
+                    }}
                     onClick={closeModal}
                   >
                     Close
@@ -217,7 +206,12 @@ function AdminUsers() {
                   <button
                     type="button"
                     className="btn btn-secondary btn-sm me-2"
-                    style={{ backgroundColor: "green", border: "none" }}
+                    style={{
+                      backgroundColor: "green",
+                      border: "none",
+                      fontSize: "1.1rem",
+                      marginTop: "5px",
+                    }}
                     onClick={handleAddAdmin}
                   >
                     Submit
@@ -225,7 +219,12 @@ function AdminUsers() {
                   <button
                     type="button"
                     className="btn btn-secondary btn-sm"
-                    style={{ backgroundColor: "gray", border: "none" }}
+                    style={{
+                      backgroundColor: "gray",
+                      border: "none",
+                      fontSize: "1.1rem",
+                      marginTop: "5px",
+                    }}
                     onClick={closeModal}
                   >
                     Close
@@ -245,7 +244,12 @@ function AdminUsers() {
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody style={{ color: "white" }}>
+        <tbody
+          style={{
+            color: "white",
+            backgroundColor: "rgb(109, 142, 75)",
+          }}
+        >
           {admins.map((admin) => (
             <tr key={admin.id}>
               <td>{admin.email}</td>
